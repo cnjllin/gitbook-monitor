@@ -13,7 +13,11 @@
 
 -----
 * [Linux监控](chapters/linux/monitor-linux-introduction.md)
-
+    * [CPU监控](chapters/linux/monitor-linux-cpu.md)
+    * [系统监控](chapters/linux/monitor-linux-system.md)
+    * [内存监控](chapters/linux/monitor-linux-memory.md)
+    * [网络监控](chapters/linux/monitor-linux-network.md)
+    * [磁盘监控](chapters/linux/monitor-linux-diso.md)
 
 -----
 * Docker监控
