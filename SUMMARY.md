@@ -13,6 +13,7 @@
 
 -----
 * [Linux监控](chapters/linux/monitor-linux-introduction.md)
+    * [基本信息](chapters/linux/monitor-linux-basic-info.md)
     * [CPU监控](chapters/linux/monitor-linux-cpu.md)
     * [系统监控](chapters/linux/monitor-linux-system.md)
     * [内存监控](chapters/linux/monitor-linux-memory.md)

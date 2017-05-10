@@ -53,53 +53,42 @@ usage_user       float
 * usage_steal: 虚拟机占用的CPU时间百分比(如果OS作为Hypervisor)
 
 
-## disk
-查看disk表中的metrics:  
+## processes
+查看processes表中的metrics:
 
 ```
-> show field keys on telegraf from disk
-name: disk
-fieldKey     fieldType
---------     ---------
-free         integer
-inodes_free  integer
-inodes_total integer
-inodes_used  integer
-total        integer
-used         integer
-used_percent float
+> show field keys on telegraf from processes
+name: processes
+fieldKey      fieldType
+--------      ---------
+blocked       integer
+paging        integer
+running       integer
+sleeping      integer
+stopped       integer
+total         integer
+total_threads integer
+unknown       integer
+zombies       integer
 ```
 
-* free:  
-* inodes_free:  
-* inodes_total:  
-* inodes_used:  
-* total:  
-* used:  
-* used_percent:  
 
-
-
-
-
-## diskio
-查看diskio表中的metrics:
+## system
+查看system表中的metrics:
 
 ```
-> show field keys on telegraf from diskio
-name: diskio
-fieldKey         fieldType
---------         ---------
-io_time          integer
-iops_in_progress integer
-read_bytes       integer
-read_time        integer
-reads            integer
-write_bytes      integer
-write_time       integer
-writes           integer
+> show field keys on telegraf from system
+name: system
+fieldKey      fieldType
+--------      ---------
+load1         float
+load15        float
+load5         float
+n_cpus        integer
+n_users       integer
+uptime        integer
+uptime_format string
 ```
-
 
 
 ## kernel
@@ -135,6 +124,70 @@ total             integer
 used              integer
 used_percent      float
 ```
+
+## swap
+查看swap表中的metrics:
+
+```
+> show field keys on telegraf from swap
+name: swap
+fieldKey     fieldType
+--------     ---------
+free         integer
+in           integer
+out          integer
+total        integer
+used         integer
+used_percent float
+```
+
+
+## disk
+查看disk表中的metrics:  
+
+```
+> show field keys on telegraf from disk
+name: disk
+fieldKey     fieldType
+--------     ---------
+free         integer
+inodes_free  integer
+inodes_total integer
+inodes_used  integer
+total        integer
+used         integer
+used_percent float
+```
+
+* free:  
+* inodes_free:  
+* inodes_total:  
+* inodes_used:  
+* total:  
+* used:  
+* used_percent:  
+
+
+
+## diskio
+查看diskio表中的metrics:
+
+```
+> show field keys on telegraf from diskio
+name: diskio
+fieldKey         fieldType
+--------         ---------
+io_time          integer
+iops_in_progress integer
+read_bytes       integer
+read_time        integer
+reads            integer
+write_bytes      integer
+write_time       integer
+writes           integer
+```
+
+
 
 ## net
 查看net表中的metrics:
@@ -232,57 +285,6 @@ udplite_rcvbuferrors  integer
 udplite_sndbuferrors  integer
 ```
 
-## processes
-查看processes表中的metrics:
-
-```
-> show field keys on telegraf from processes
-name: processes
-fieldKey      fieldType
---------      ---------
-blocked       integer
-paging        integer
-running       integer
-sleeping      integer
-stopped       integer
-total         integer
-total_threads integer
-unknown       integer
-zombies       integer
-```
-
-## swap
-查看swap表中的metrics:
-
-```
-> show field keys on telegraf from swap
-name: swap
-fieldKey     fieldType
---------     ---------
-free         integer
-in           integer
-out          integer
-total        integer
-used         integer
-used_percent float
-```
-
-## system
-查看system表中的metrics:
-
-```
-> show field keys on telegraf from system
-name: system
-fieldKey      fieldType
---------      ---------
-load1         float
-load15        float
-load5         float
-n_cpus        integer
-n_users       integer
-uptime        integer
-uptime_format string
-```
 
 
 
