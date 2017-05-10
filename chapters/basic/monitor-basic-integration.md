@@ -1,2 +1,0 @@
-# Telegraf+InfluxDB+Grafana
-

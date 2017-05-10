@@ -1,6 +1,8 @@
 # Telegraf
 
-使用telegraf的docker input plugin监控Docker
+使用telegraf的docker input plugin监控Docker。
+
+用Telegraf监控Docker需要注意的地方，由于docker_container_net表中没有container id作为tag，有container_name这个tag
 
 ## 配置
 编辑telegraf的配置文件,将inputs.docker部分取消注释:
@@ -304,13 +306,33 @@ io_serviced_recursive_write      integer
 
 
 ## Grafana配置
+创建一个名为Docker的Dashboard，并配置两个模板变量(参考[Grafana配置](../basic/monitor-basic-grafana-tutorial.html)):  
+
+* 宿主机主机名
+* 容器名
+
+
+
+
 ### cpu利用率图
+
+
 
 ### 内存使用图
 
 ### blkio图
 
 ### 带宽图
+带宽出现负数，怀疑是不是容器的包被清零了
+
+负数还是周期性的，2分钟出现一次。
+
+调试思路，通过/proc查看某个进程的网络数据，看看是否发生了变化。了解一下docker的那个参数是从哪里来的。
+
+容器名是，在InfluxDB中验证一下
+
+
+
 
 ### pps图
 

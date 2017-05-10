@@ -69,23 +69,5 @@ Type设置为slack。
 
 
 
-# 告警
-只有Grafana v4.0及其以上版本才支持告警。
-
-打开一个panel,切换到Alter标签。
-
-
-TODO
-报警信息怎么切换到主机名
-
-
-# todo
-## ceph osd used table
-SELECT LAST("used_kb") / LAST("total_kb") AS "OSD" FROM "script.ceph.osd" WHERE "cluster_name" =~ /^$cluster_name$/ AND $timeFilter GROUP BY time($interval), "osd" fill(null)
-
-options中选择time seires aggregation
-
-
-
 
 

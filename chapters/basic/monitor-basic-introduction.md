@@ -1,4 +1,4 @@
-# 简介
+# 基本组件
 
 监控系统一般如下几个模块：
 
@@ -9,7 +9,5 @@
 
 本书介绍了开源的监控方案:
 
-采集数据(Telegraf) -> 存储数据(InfluxDB) -> 显示数据(Grafana)
-
-并使用Kapacitor做告警
+采集数据(Telegraf) -> 存储数据(InfluxDB) -> 显示数据(Grafana), 并使用Kapacitor做告警
 

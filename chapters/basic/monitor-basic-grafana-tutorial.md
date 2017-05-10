@@ -64,7 +64,7 @@ row是panel的容器
 
 
 #### query
-在Metrics中，没一个query都表示一条线。
+在Metrics中，每一个query都表示一条线。
 
 query的组成:  
 
@@ -87,6 +87,10 @@ query的组成:
 
 LeffY - Uint - none - percent(0-100)
 
+> Grafana中,Unit表示的是查询出来的数据的单位,设置好后,Grafana会自动显示成合适的单位。比如原始数据的单位是bytes,数字是1024,在Grafana中会根据值自动在坐标轴上显示成1K,方便阅读。
+
+> 还有一点注意的是,对于百分数,如果查询出来的是0-1之间的值,将percent设置为(0-1);如果查询出来的是0-100之间的值,将percent设置为(0-100)。对于百分比,Grafana在坐标轴中总是显示0-100%,所以将原始数据的单位设置好才能够正确地显示。
+
 
 设置完后，效果图如下:  
 
@@ -100,8 +104,11 @@ LeffY - Uint - none - percent(0-100)
 这里以InfluxDB(使用Telegraf采集)数据源为例，配置主机名变量
 点击Dashboard上方的小齿轮('Manage dashboard' -> 'Templating' -> 'New')
 
-* Variable -> Name:变量的名称(在查询条件中显示,这里设置为server_name)
-* Variable -> Label:变量的标签名(在页面上过滤时显示,这里设置为主机名)
+Variable部分
+
+* Name: 变量的名称(在查询条件中显示,这里设置为server_name)
+* Label: 变量的标签名(在页面上过滤时显示,这里设置为主机名)
+* Type: 设置为Query
 * "Query Options" -> "Data Source"：选择我们配置的数据源
 * "Query Options" -> "Refresh"：选择"On Time Range Change"
 * "Query Options" -> "Query"： 查询主机名，输入 SHOW TAG VALUES ON "telegraf" WITH KEY = "host"
@@ -121,42 +128,6 @@ cpu.usage($tag_host)
 
 
 
-
-
-
-SELECT mean("usage_user") FROM "cpu" WHERE "host" =~ /^$hostname$/ AND $timeFilter GROUP BY time($interval), "host"
-
-
-
-
-
-
-# TODO
-
-各种监控指标的配置脚本
-
-
-如何使用主机名过滤
-
-
-
-计算网卡流量、pps
-
-
-
-
-
-SELECT mean("commands_commit")+mean("commands_rollback") FROM "mysql" WHERE $timeFilter GROUP BY time($interval) fill(null)
-
-
-
-
-mean("commands_commit")
-mean("commands_rollback")
-
-
-
-(mean("commands_commit")+mean("commands_rollback"))
 
 
 

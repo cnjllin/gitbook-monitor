@@ -67,20 +67,20 @@ EOF
 install, start and enable service: 
 
 ```
-yum install influxdb
-systemctl start influxdb
-systemctl enable influxdb
+# yum install influxdb
+# systemctl start influxdb
+# systemctl enable influxdb
 ```
 
-> 配置文件路径:  **/etc/influxdb/influxdb.conf**
+> CentOS7上InfluxDB的配置文件路径是:  **/etc/influxdb/influxdb.conf**
 
 ### macOS
 ```
-brew install influxdb
-brew services start influxdb
+➜ brew install influxdb
+➜ brew services start influxdb
 ```
 
-> 配置文件路径:  **/usr/local/etc/influxdb.conf**
+> macOS上InfluxDB的配置文件路径是:  **/usr/local/etc/influxdb.conf**
 
 
 # 配置
@@ -275,7 +275,7 @@ telegraf READ
 
 ```
 
-刚开始这里有一个疑问的地方，在192.168.168.201的influxdb上，我配置了HTTPS，在influx的命令行选项里面我没有看到ca相关的选项，但是上面的命令连接成功了。想到在192.168.168.201的influxdb上的证书是用我在macOS上自建的CA签发的，CA的根证书我已经信任过了，所以上面的命令可以连接到92.168.168.201的influxdb上。如果在macOS取消对自建CA根证书的信任，在运行上面的命令，如下:  
+刚开始这里有一个疑问的地方，在192.168.168.201的influxdb上，我配置了HTTPS，在influx的命令行选项里面我没有看到ca相关的选项，但是上面的命令连接成功了。想到在192.168.168.201的influxdb上的证书是用我在macOS上自建的CA签发的，CA的根证书我已经信任过了，所以上面的命令可以连接到192.168.168.201的influxdb上。如果在macOS取消对自建CA根证书的信任，在运行上面的命令，如下:
 
 ```
 ➜ influx -ssl -host 192.168.168.201

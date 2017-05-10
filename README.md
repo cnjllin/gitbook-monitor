@@ -6,9 +6,9 @@
 
 * 开源分布式监控与告警系统(Telegraf+InfluxDB+Grafana)的运维笔记
 * Linux主机监控
-* Docker监控(cAdvisor+InfluxDB+Grafana, Prometheus)
+* Docker监控
+* Kubernetes监控
 * Ceph监控
-
-
+* OpenStack监控
 
 

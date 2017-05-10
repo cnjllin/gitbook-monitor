@@ -92,36 +92,39 @@ InfluxDB Output Error: {"error":"database not found: \"telegraf\""}
 
 
 ## 验证
-telegraf -config /usr/local/etc/telegraf.conf -test
-
 telegraf -sample-config -input-filter cpu:mem:disk -output-filter influxdb > telegraf.conf
+
+查看telegraf抓取的所有数据
+
+```
+# telegraf -test
+* Plugin: inputs.system, Collection 1
+> system,host=nl-cloud-dyc-k8s-1 load1=0.19,load5=0.34,load15=0.25,n_users=2i,n_cpus=2i 1494408513000000000
+> system,host=nl-cloud-dyc-k8s-1 uptime=1902973i,uptime_format="22 days,  0:36" 1494408513000000000
+* Plugin: inputs.net, Collection 1
+......
+```
+
+查看telegraf抓取的内存和网络数据(-input-filter的值为配置文件中inputs.xxx中的xxx,可以设置多个值,使用冒号分隔):
+
+```
+# telegraf -test -input-filter mem:diskio
+* Plugin: inputs.mem, Collection 1
+> mem,host=nl-cloud-dyc-k8s-1 available=1193779200i,used=2950987776i,active=3256971264i,total=4144766976i,free=143593472i,cached=1392947200i,buffered=0i,inactive=581951488i,used_percent=71.19791759313613,available_percent=28.802082406863878 1494408643000000000
+* Plugin: inputs.diskio, Collection 1
+> diskio,name=vda,host=nl-cloud-dyc-k8s-1 writes=11154527i,read_bytes=2805115392i,write_bytes=40910338048i,read_time=512738i,write_time=49621289i,io_time=35475332i,iops_in_progress=0i,reads=43120i 1494408643000000000
+> diskio,name=vda1,host=nl-cloud-dyc-k8s-1 read_time=512595i,write_time=49525882i,io_time=35426178i,iops_in_progress=0i,reads=42936i,writes=10720821i,read_bytes=2804361728i,write_bytes=40910338048i 1494408643000000000
+> diskio,name=dm-0,host=nl-cloud-dyc-k8s-1 io_time=101894i,iops_in_progress=0i,reads=176074i,writes=123313i,read_bytes=3152873472i,write_bytes=4582692352i,read_time=135021i,write_time=1289091i 1494408643000000000
+```
 
 
 
 # Input
 telegraf是input驱动的，它从配置文件中指定的input中收集metrics。
 
+使用某些input生成配置文件:
 
-
-telegraf -sample-config -input-filter cpu:mem:disk:net:mysql -output-filter influxdb > telegraf.conf.template
-
-
-servers = ["root@tcp(127.0.0.1:3306)/?tls=false"]
-
-
-## mysql
-Mar 13 13:40:28 nl-cloud-openstack-1 telegraf: 2017/03/13 13:40:28 E! Error parsing /etc/telegraf/telegraf.conf, line 1213: field corresponding to `gather_innodb_metrics' is not defined in `*mysql.Mysql'
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
+# telegraf -sample-config -input-filter cpu:mem:disk -output-filter influxdb > telegraf.conf
+```
 
