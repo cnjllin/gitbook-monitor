@@ -2,7 +2,7 @@
 
 本文主要介绍了Telegraf中Linux相关的监控指标。
 
-查看监控项分类(也就是查询telegraf表中的measurement):  
+查看监控项分类(查询telegraf表中的measurement):
 
 ```
 > use telegraf
@@ -48,7 +48,7 @@ usage_user       float
 * usage_iowait: io等待占用的CPU时间百分比
 * usage_idle: CPU空闲时间百分比
 * usage_irq: 硬中断占用的CPU时间百分比
-* usage_softirq: 软终端占用的CPU时间百分比
+* usage_softirq: 软中断占用的CPU时间百分比
 * usage_nice: 被nice的进程占用的CPU时间百分比
 * usage_steal: 虚拟机占用的CPU时间百分比(如果OS作为Hypervisor)
 
@@ -124,6 +124,9 @@ total             integer
 used              integer
 used_percent      float
 ```
+
+
+
 
 ## swap
 查看swap表中的metrics:

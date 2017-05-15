@@ -11,13 +11,14 @@
 
 配置，添加panel时，选择Table类型。
 
-General标签: 
+### General标签
 
 * Title: 设为"uptime"
 * Description: 设为"system uptime"
 
 
-Metrics标签中的query editor设置:  
+### Metrics标签
+query editor设置:  
 
 * FROM: 选择从system表拉取数据
 * WHERE: 为了支持多个主机，设置为host等于主机名模板变量的值(模板变量的设置参考[Grafana Tutorial](https://frank6866.gitbooks.io/monitor/content/chapters/basic/monitor-basic-grafana-tutorial.html))
@@ -26,12 +27,9 @@ Metrics标签中的query editor设置:
 * ALIAS BY: 设置为$tag_host，这样表格中的Metri列就会显示主机名
 
 
-Options标签设置:  
+### Options标签
 
 * Data: 将"Table Transform"设置为"Time series to rows"
 * Column Styles: 将Time列设置为Hidden，就不会把时间显示出来；如果需要显示时间这一列，可以将Type设置为Date
-
-
-
 
 

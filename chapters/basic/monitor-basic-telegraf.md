@@ -44,6 +44,16 @@ brew services start telegraf
 配置文件路径:  **/usr/local/etc/telegraf.conf**
 
 
+
+## 数据采集频率
+默认的采集频率是10s,有点长,可以修改为5s
+
+```
+[agent]
+  ## Default data collection interval for all inputs
+  interval = "10s"
+```
+
 ## 和InfluxDB集成
 以CentOS7为例。
 

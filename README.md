@@ -1,14 +1,12 @@
-# 监控系统
+# 监控系统实践
 
 本书的gitbook地址是: [https://frank6866.gitbooks.io/monitor/content/](https://frank6866.gitbooks.io/monitor/content/)
 
 主要内容如下:
 
 * 开源分布式监控与告警系统(Telegraf+InfluxDB+Grafana)的运维笔记
-* Linux主机监控
+* Linux监控
 * Docker监控
-* Kubernetes监控
-* Ceph监控
-* OpenStack监控
+
 
 

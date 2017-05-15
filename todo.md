@@ -50,7 +50,24 @@ options中选择time seires aggregation
 
 
 
+* Kubernetes监控
+* Ceph监控
+* OpenStack监控
 
 
+
+
+
+## tcp connection
+
+已连接
+time-wait
+fina-wait
+
+
+带宽利用率监控
+
+
+* [Telegraf](chapters/docker/monitor-docker-telegraf.md)
 
 
