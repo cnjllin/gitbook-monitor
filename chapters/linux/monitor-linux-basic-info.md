@@ -21,7 +21,7 @@
 query editor设置:  
 
 * FROM: 选择从system表拉取数据
-* WHERE: 为了支持多个主机，设置为host等于主机名模板变量的值(模板变量的设置参考[Grafana Tutorial](https://frank6866.gitbooks.io/monitor/content/chapters/basic/monitor-basic-grafana-tutorial.html))
+* WHERE: 为了支持多个主机，设置为host等于主机名模板变量的值(模板变量的设置参考[Grafana Tutorial](https://monitor.frank6866.com/chapters/basic/monitor-basic-grafana-tutorial.html))
 * SELECT: 选择"uptime_format"字段，并使用last这个选择函数，因为我们只关注最后一个值
 * GROUP BY: 按照主机分组，设为tag(host)
 * ALIAS BY: 设置为$tag_host，这样表格中的Metri列就会显示主机名

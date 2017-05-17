@@ -1,6 +1,6 @@
 # 监控系统实践
 
-本书的gitbook地址是: [https://frank6866.gitbooks.io/monitor/content/](https://frank6866.gitbooks.io/monitor/content/)
+本书的gitbook地址是: [https://monitor.frank6866.com/](https://monitor.frank6866.com/)
 
 主要内容如下:
 
