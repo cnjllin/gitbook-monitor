@@ -4,7 +4,7 @@
 ## 每个核的平均负载
 对于多核系统，load显示的是所有核的总负载，1个核的系统load为2时负载就有点高了，但是24核的系统load为12时系统的负载都不高，所以我们使用每个核的平均负载反应系统的负载情况。当每个核的平均负载大于1时，就需要注意了。
 
-数据源: system表中的load1表示的是系统的所有核1分钟的平均负载，n_cpus表示系统逻辑cpu的个数(查看系统的cpu信息参考[这里](https://linux.frank6866.com/chapters/process/linux-process-cpu-info.html))。使用load1/n\_cpus就可以得到系统1分钟内每个核的平均负载，5分钟和15分钟计算方法是一样的。
+数据源: system表中的load1表示的是系统的所有核1分钟的平均负载，n_cpus表示系统逻辑cpu的个数(查看系统的cpu信息参考[这里](https://frank6866.gitbooks.io/linux/content/chapters/process/linux-process-cpu-info.html))。使用load1/n\_cpus就可以得到系统1分钟内每个核的平均负载，5分钟和15分钟计算方法是一样的。
 
 如下图:
 

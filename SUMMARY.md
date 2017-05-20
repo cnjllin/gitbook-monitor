@@ -13,12 +13,17 @@
     * [Grafana 异常](chapters/basic/monitor-basic-grafana-exception.md)
 
 -----
-* [Linux监控](chapters/linux/monitor-linux-introduction.md)
-    * [基本信息](chapters/linux/monitor-linux-basic-info.md)
+* Linux监控
+    * [Linux监控指标](chapters/linux/monitor-linux-metrics.md)
+    * [基本信息监控](chapters/linux/monitor-linux-basic-info.md)
     * [CPU监控](chapters/linux/monitor-linux-cpu.md)
     * [内存监控](chapters/linux/monitor-linux-memory.md)
     * [磁盘监控](chapters/linux/monitor-linux-diskio.md)
     * [网络监控](chapters/linux/monitor-linux-network.md)
+
+-----
+* web server监控
+    * [apache/httpd监控](chapters/web/monitor-web-apache.md)
 
 -----
 * Docker监控

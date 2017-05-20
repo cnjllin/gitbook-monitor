@@ -1,6 +1,9 @@
+---
+description: Grafana是一个开源的监控数据展示和分析工具,界面美观有科技感,功能强大,可以从多种数据源取值并进行展示,比如InfluxDB
+---
 # Grafana
 
-[官方文档地址](http://docs.grafana.org)
+Grafana是一个开源的监控数据展示和分析工具,界面美观有科技感,功能强大,可以从多种数据源取值并进行展示,比如[InfluxDB](https://frank6866.gitbooks.io/monitor/content/chapters/basic/monitor-basic-influxdb.html).
 
 ## 安装
 Grafana的默认端口是3000，默认账号和密码都是admin。

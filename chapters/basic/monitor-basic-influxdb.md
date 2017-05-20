@@ -1,3 +1,6 @@
+---
+description: InfluxDB是一个开源的、分布式时序、事件和指标数据库。InfluxDB使用Go语言编写，着力于高性能地查询与存储时序型数据，无需外部依赖。
+---
 # InfluxDB
 InfluxDB是一个开源的、分布式时序、事件和指标数据库。InfluxDB使用Go语言编写，着力于高性能地查询与存储时序型数据，无需外部依赖。
 
@@ -94,7 +97,7 @@ install, start and enable service:
 
 ## HTTPS配置
 ### 生成证书
-这里用的是在macOS上自建的CA，用来签发证书。(如何搭建CA，参考我的[搭建CA](https://linux.frank6866.com/chapters/security/security-ca-setup.html)这篇文章)
+这里用的是在macOS上自建的CA，用来签发证书。(如何搭建CA，参考我的[搭建CA](https://frank6866.gitbooks.io/linux/content/chapters/security/security-ca-setup.html)这篇文章)
 
 ```
 ➜ mkdir /tmp/process_csr/influxdb/
@@ -148,7 +151,7 @@ InfluxDB shell version: 1.2.2
 可能出现的问题及解决方法:  
 
 * 如果出现"x509: certificate is valid for xxx, not localhost"的问题，确认是否在证书的SAN中添加了DNS:localhost
-* 如果出现"x509: certificate signed by unknown authority"，确认CA的证书被系统信任((CentOS7或macOS中如何添加对CA证书的信任，参考我的[搭建CA](https://linux.frank6866.com/chapters/security/security-ca-setup.html)这篇文章)).
+* 如果出现"x509: certificate signed by unknown authority"，确认CA的证书被系统信任((CentOS7或macOS中如何添加对CA证书的信任，参考我的[搭建CA](https://frank6866.gitbooks.io/linux/content/chapters/security/security-ca-setup.html)这篇文章)).
 
 
 ## authentication
@@ -283,6 +286,6 @@ Failed to connect to https://192.168.168.201:8086: Get https://192.168.168.201:8
 Please check your connection settings and ensure 'influxd' is running.
 ```
 
-所以如果碰到"x509: certificate signed by unknown authority"类似的问题，解决思路在系统中添加对证书的信任。(CentOS7或macOS中如何添加对CA证书的信任，参考我的[搭建CA](https://linux.frank6866.com/chapters/security/security-ca-setup.html)这篇文章)
+所以如果碰到"x509: certificate signed by unknown authority"类似的问题，解决思路在系统中添加对证书的信任。(CentOS7或macOS中如何添加对CA证书的信任，参考我的[搭建CA](https://frank6866.gitbooks.io/linux/content/chapters/security/security-ca-setup.html)这篇文章)
 
 

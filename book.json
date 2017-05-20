@@ -2,27 +2,15 @@
   "plugins": [
     "-disqus",
     "-sharing",
-    "sitemap",
-    "analytics",
     "github-buttons"
   ],
   "pluginsConfig": {
-    "disqus": {
-      "shortName": "frank6866"
-    },
-    "sitemap": {
-      "hostname": "https://monitor.frank6866.com/"
-    },
     "github-buttons": {
       "repo": "frank6866/gitbook-monitor",
       "types": [
         "star"
       ],
       "size": "small"
-    },
-    "analytics": {
-      "google": "UA-99319555-3",
-      "baidu": "fe506d00271c0ff5629b60216d16ddf2"
     }
   }
 }

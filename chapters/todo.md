@@ -71,3 +71,81 @@ fina-wait
 * [Telegraf](chapters/docker/monitor-docker-telegraf.md)
 
 
+
+
+
+# 分类
+## web server
+apache
+
+haproxy
+
+httpd_listener
+
+http_response
+
+httpjson
+
+nginx
+
+net_response/
+
+## db、mq及缓存等
+### influxdb
+
+### mysql/mariadb
+
+
+
+
+### mongo
+
+### redis
+
+### rabbitmq
+
+
+### memcached
+
+
+### kafka
+
+
+### etcd
+
+### zk
+
+
+### cassandra
+
+
+## elk
+### Elasticsearch
+
+###
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
