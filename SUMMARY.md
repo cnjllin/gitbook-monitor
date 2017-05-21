@@ -24,6 +24,7 @@
 -----
 * web server监控
     * [apache/httpd监控](chapters/web/monitor-web-apache.md)
+    * [http响应时间监控](chapters/web/monitor-web-http-response-time.md)
 
 -----
 * Docker监控
