@@ -292,7 +292,11 @@ host ceph-1
 ......
 ```
 
+### 删除measure
 
+```
+DROP MEASUREMENT <measurement_name>
+```
 
 
 # 数据管理
