@@ -102,7 +102,7 @@ install, start and enable service:
 open server: open tsdb store: open /influxdb/data/_internal: permission denied
 ```
 
-发现/influxdb/data的owner是root, 所以在终端中可以使用命令行启动; 为了能在systemd中启动
+发现/influxdb/data的owner是root, 所以在终端中可以使用命令行启动; 为了能在systemd中启动, 将data dir的owner和group修改为infuxdb
 
 
 
