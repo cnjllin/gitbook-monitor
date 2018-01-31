@@ -77,6 +77,35 @@ install, start and enable service:
 
 > CentOS7上InfluxDB的配置文件路径是:  **/etc/influxdb/influxdb.conf**
 
+
+如果启动失败
+
+```
+# systemctl status influxdb
+● influxdb.service - InfluxDB is an open-source, distributed, time series database
+   Loaded: loaded (/usr/lib/systemd/system/influxdb.service; enabled; vendor preset: disabled)
+   Active: failed (Result: start-limit)
+     Docs: https://docs.influxdata.com/influxdb/
+  Process: 22232 ExecStart=/usr/bin/influxd -config /etc/influxdb/influxdb.conf $INFLUXD_OPTS (code=exited, status=1/FAILURE)
+ Main PID: 22232 (code=exited, status=1/FAILURE)
+```
+
+解决思路: 现在终端中用命令启动一下influxdb, 命令systemd中的ExecStart的值:
+
+```
+/usr/bin/influxd -config /etc/influxdb/influxdb.conf $INFLUXD_OPTS
+```
+
+很奇怪的是, 用命令可以启动influxdb, 但是无法用systemd启动influxdb, 查看/var/log/messages
+
+```
+open server: open tsdb store: open /influxdb/data/_internal: permission denied
+```
+
+发现/influxdb/data的owner是root, 所以在终端中可以使用命令行启动; 为了能在systemd中启动
+
+
+
 ### macOS
 ```
 ➜ brew install influxdb
