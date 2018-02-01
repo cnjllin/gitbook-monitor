@@ -1,3 +1,29 @@
+# todo
+1. 使用了derivative就不能使用group by time($interval)
+
+
+system.monitor.cpu
+system.monitor.disk
+system.monitor.memory
+system.monitor.net.dev
+system.monitor.net.icmp
+system.monitor.net.icmp_msg
+system.monitor.net.ip
+system.monitor.net.tcp
+system.monitor.net.udp
+system.monitor.per.cpu
+system.monitor.process
+system.monitor.process.host
+system.monitor.process.kernel
+system.monitor.slab
+system.monitor.slab.detail
+system.monitor.tcpstat
+system.monitor.udp
+system.monitor.vmstat
+system.monitor.zookeeper
+
+esm-hardware
+
 # 硬件监控
 
 ## io

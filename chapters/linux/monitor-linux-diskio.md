@@ -2,7 +2,18 @@
 * 使用量监控
 * 读写速度监控
 * IOPS监控
+* disk util监控
+* inode用量
 
+## disk util
+```
+SELECT derivative("io_time", 1ms) FROM "diskio" WHERE "host" =~ /^$host$/ AND $timeFilter GROUP BY "name"
+```
+
+## inode用量
+```
+SELECT mean("inodes_used")/mean("inodes_total") FROM "disk" WHERE ("host" =~ /$machine$/) AND $timeFilter GROUP BY time($interval), "host", "path" fill(null)
+```
 
 ## 磁盘用量监控
 目的: 监控根分区/和数据分区/data的使用空间百分比。
