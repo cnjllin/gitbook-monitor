@@ -39,6 +39,16 @@ from_address = dyc_abc@vip.sina.com
 解决: user字段必须和from_address字段中@前面的一样
 
 
+# 添加用户
+添加只读权限的用户
+
+Admin - Users - 'Add or Invite' - 用户选择Viewer - 点击完后生成一个邀请链接, 在浏览器中打开链接, 设置密码就可以添加用户了
+
+Grafana权限:
+
+* Editor: Can create & edit dashboads
+* Viewer: Can not create dashboards nor edit panels
+* Read only editor: Can not create dashboards nor save changes to them, but they can edit panels and create new panels (But not save)
 
 
 # 通知
