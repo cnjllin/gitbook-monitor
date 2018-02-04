@@ -1,15 +1,24 @@
 # Telegraf
 
+监控系统一般如下几个模块：
+
+* 数据采集
+* 数据存储
+* 数据展示
+* 告警
+
+开源的监控方案:
+采集数据(Telegraf) -> 存储数据(InfluxDB) -> 显示数据(Grafana)
 
 Telegraf是一个用Golang编写的代理程序，可以收集系统和服务的统计数据，并写入到InfluxDB。Telegraf具有内存占用小的特点，通过开发插件我们可以添加我们需要的服务。
 
-本文使用的telegraf版本为V1.2,[官网文档地址](https://docs.influxdata.com/telegraf/v1.2/)。
+2017.3使用的telegraf版本为V1.2,[官网文档地址](https://docs.influxdata.com/telegraf/v1.2/)。
 
 
 
 ## 安装
 ### CentOS7
-在CentOS7上部署Telegraf可以使用我写的[ansible role](https://galaxy.ansible.com/frank6866/telegraf/),不过为了熟悉Telegraf,建议还是手工安装一遍。
+在CentOS7上部署Telegraf可以使用[ansible role](https://galaxy.ansible.com/frank6866/telegraf/),不过为了熟悉Telegraf,建议还是手工安装一遍。
 
 
 创建仓库文件  
@@ -43,6 +52,14 @@ brew services start telegraf
 
 配置文件路径:  **/usr/local/etc/telegraf.conf**
 
+### 测试
+当Telegraf启动时，如果InfluxDB中没有Telegraf数据库，会自动创建一个名为telegraf的库。
+
+```
+telegraf -config /usr/local/etc/telegraf.conf -test
+
+telegraf -sample-config -input-filter cpu:mem:disk -output-filter influxdb > telegraf.conf
+```
 
 
 ## 数据采集频率
