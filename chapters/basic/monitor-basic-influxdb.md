@@ -124,6 +124,9 @@ open server: open tsdb store: open /influxdb/data/_internal: permission denied
 ## admin ui
 在1.3版本中将会移除admin ui功能，不要再依赖这个功能。  
 
+
+
+
 ## HTTPS配置
 ### 生成证书
 这里用的是在macOS上自建的CA，用来签发证书。(如何搭建CA，参考我的[搭建CA](https://frank6866.gitbooks.io/linux/content/chapters/security/security-ca-setup.html)这篇文章)

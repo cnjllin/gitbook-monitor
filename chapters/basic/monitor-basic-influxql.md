@@ -111,6 +111,48 @@ telegraf
 > use telegraf
 ```
 
+### 修改数据保留时间
+查看数据保留时间(默认是一周)
+
+```
+> show retention policies on telegraf;
+name    duration shardGroupDuration replicaN default
+----    -------- ------------------ -------- -------
+autogen 0s       168h0m0s           1        true
+```
+
+创建policy:
+
+```
+> CREATE RETENTION POLICY "policy_2month" ON "telegraf" DURATION 60d REPLICATION 1 DEFAULT
+
+> show retention policies on telegraf;
+
+name          duration  shardGroupDuration replicaN default
+----          --------  ------------------ -------- -------
+autogen       0s        168h0m0s           1        false
+policy_2month 1440h0m0s 24h0m0s            1        true
+```
+
+* policy_2month: 策略名
+* telegraf: 数据库名
+* 60d：保存60天，60天之前的数据将被删除, 它具有各种时间参数，比如：h（小时），w（星期）
+* REPLICATION 1：副本个数
+* DEFAULT: 设为默认的策略
+
+修改policy:
+
+```
+> ALTER RETENTION POLICY "policy_2month" ON "telegraf" DURATION 4w DEFAULT
+```
+
+删除policy
+
+```
+> DROP RETENTION POLICY "policy_2month" ON "telegraf";
+```
+
+
 ## 表操作
 ### show measurements
 显示telegraf库中的所有表
