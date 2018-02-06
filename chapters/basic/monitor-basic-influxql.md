@@ -384,6 +384,8 @@ DROP MEASUREMENT <measurement_name>
 
 WHERE条件中支持对filed、tag和timestamp进行操作。
 
+
+
 ### field
 格式:
 
@@ -416,6 +418,12 @@ tag_key <operator> ['tag_value']
 =   equal to
 <> not equal to
 != not equal to
+```
+
+正则匹配:
+
+```
+SELECT derivative("io_time", 1ms) FROM "diskio" WHERE ("host" =~ /$machine$/ AND "name" =~ /.*[a-zA-Z]+$/) AND $timeFilter GROUP BY "host", "name"
 ```
 
 ### timestamps
