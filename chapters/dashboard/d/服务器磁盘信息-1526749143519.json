@@ -47,7 +47,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1526747764736,
+  "iteration": 1526749052793,
   "links": [],
   "panels": [
     {
@@ -693,7 +693,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "increase(node_disk_read_bytes_total{instance=~'$node'}[30s]) / (increase(node_disk_reads_completed_total{instance=~'$node'}[30s]) + 0.000000001)",
+          "expr": "increase(node_disk_read_bytes_total{instance=~'$node', device!~'^(sr|nbd|dm).*$'}[30s]) / (increase(node_disk_reads_completed_total{instance=~'$node', device!~'^(sr|nbd|dm).*$'}[30s]) + 0.000000001)",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}-{{device}}",
@@ -776,7 +776,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(node_disk_writes_merged_total{instance=~'$node'}[5m])",
+          "expr": "irate(node_disk_writes_merged_total{instance=~'$node', device!~'^(sr|nbd|dm).*$'}[5m])",
           "format": "time_series",
           "instant": false,
           "intervalFactor": 1,
@@ -972,5 +972,5 @@
   "timezone": "",
   "title": "服务器磁盘信息",
   "uid": "uz1mDHMikwqdsd",
-  "version": 33
+  "version": 37
 }
