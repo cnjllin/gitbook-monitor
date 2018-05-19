@@ -204,6 +204,15 @@ InfluxDB shell version: 1.2.2
 ......
 ```    
 
+关闭查询日志（查询日志可能很多，导致/var/log/message文件过大）
+```
+[data]
+    query-log-enabled = false
+
+```
+
+
+
 修改完后重启InfluxDB:  
 
 ```

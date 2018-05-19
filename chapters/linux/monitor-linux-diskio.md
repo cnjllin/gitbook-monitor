@@ -51,7 +51,7 @@ LeffY - Uint - none - percent(0-100)
 
 
 ## 磁盘读写IOPS监控
-IOPS的计算方法参考[/proc/diskstats文件](https://frank6866.gitbooks.io/linux/content/chapters/io/linux-io-proc-diskstats.html).
+IOPS的计算方法参考[/proc/diskstats文件](https://frank6866.gitbooks.io/linux/chapters/io/proc/linux-io-proc-diskstats.html).
 
 目的: 监控磁盘的IOPS。
 

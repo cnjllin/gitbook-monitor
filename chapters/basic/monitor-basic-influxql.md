@@ -332,6 +332,9 @@ key  value
 host 10.12.10.43
 host ceph-1
 ......
+
+> show tag values with key = "server_name" where "server_name" =~ /.*\.test\.com/;
+
 ```
 
 ### 删除measure
